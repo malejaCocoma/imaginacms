@@ -1,5 +1,5 @@
 {
-    "name": "asgardcms/platform",
+    "name": "imagina/cms-platform",
     "description": "The AsgardCms application.",
     "keywords": [
         "cms",
@@ -17,18 +17,25 @@
         "laravel/tinker": "^1.0",
         "nwidart/laravel-modules": "^4.0",
         "cartalyst/sentinel": "^2.0",
-        "idavoll/adminlte-theme": "4.0.x-dev",
-        "idavoll/core-module": "4.0.x-dev",
-        "idavoll/dashboard-module": "4.0.x-dev",
-        "idavoll/flatly-theme": "4.0.x-dev",
-        "idavoll/media-module": "4.0.x-dev",
-        "idavoll/menu-module": "4.0.x-dev",
-        "idavoll/page-module": "4.0.x-dev",
-        "idavoll/setting-module": "4.0.x-dev",
-        "idavoll/tag-module": "4.0.x-dev",
-        "idavoll/translation-module": "4.0.x-dev",
-        "idavoll/user-module": "4.0.x-dev",
-        "idavoll/workshop-module": "4.0.x-dev"
+        "imagina/imaginacmsadmin-theme": "4.0.x-dev",
+        "paragonie/random_compat": "2.*",
+        "laravel/passport": "4.0",
+        "fruitcake/laravel-cors": "1.*",
+        "pusher/pusher-php-server": "~3.0",
+
+        "imagina/core-module": "4.0.x-dev",
+        "imagina/dashboard-module": "4.0.x-dev",
+
+        "imagina/tag-module": "4.0.x-dev",
+        "imagina/media-module": "4.0.x-dev",
+        "imagina/page-module": "4.0.x-dev",
+        "imagina/menu-module": "4.0.x-dev",
+        "imagina/setting-module": "4.0.x-dev",
+        "imagina/translation-module": "4.0.x-dev",
+        "imagina/workshop-module": "4.0.x-dev",
+        "imagina/user-module": "4.0.x-dev",
+
+        "imagina/imaginacms-theme": "4.0.x-dev"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
