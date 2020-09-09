@@ -34,6 +34,13 @@
         "imagina/translation-module": "4.0.x-dev",
         "imagina/workshop-module": "4.0.x-dev",
         "imagina/user-module": "4.0.x-dev",
+        
+        "imagina/iblog-module": "4.0.x-dev",
+        "imagina/iforms-module": "4.0.x-dev",
+        "imagina/notification-module": "4.0.x-dev",
+        "imagina/slider-module": "4.0.x-dev",
+        "imagina/isearch-module": "4.0.x-dev",
+        "imagina/ibanners-module": "4.0.x-dev",
 
         "imagina/imaginacms-theme": "4.0.x-dev"
     },
