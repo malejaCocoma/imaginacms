@@ -17,7 +17,7 @@
         "laravel/tinker": "^1.0",
         "nwidart/laravel-modules": "^4.0",
         "cartalyst/sentinel": "^2.0",
-        "imagina/imaginacmsadmin-theme": "4.0.x-dev",
+        "imagina/adminlte-theme": "4.0.x-dev",
         "paragonie/random_compat": "2.*",
         "laravel/passport": "4.0",
         "fruitcake/laravel-cors": "1.*",
@@ -42,7 +42,7 @@
         "imagina/isearch-module": "4.0.x-dev",
         "imagina/ibanners-module": "4.0.x-dev",
 
-        "imagina/imaginacms-theme": "4.0.x-dev"
+        "imagina/flatly-theme": "4.0.x-dev"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
