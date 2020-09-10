@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Providers;
-
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-
 class RouteServiceProvider extends ServiceProvider
 {
     /**
@@ -16,7 +13,6 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     protected $namespace = 'App\Http\Controllers';
-
     /**
      * Define your route model bindings, pattern filters, etc.
      *
@@ -24,11 +20,18 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
-    }
 
+        //IMAGINA - TODO: Is there a better location to force base_url ?
+        /** @var \Illuminate\Routing\UrlGenerator $url */
+        $url = $this->app['url'];
+        // Force the application URL
+        $url->forceRootUrl(config('app.url'));
+
+        $this->app->booted(function () {
+            $this->map();
+        });
+    }
     /**
      * Define the routes for the application.
      *
@@ -42,7 +45,6 @@ class RouteServiceProvider extends ServiceProvider
 
         //
     }
-
     /**
      * Define the "web" routes for the application.
      *
@@ -57,7 +59,6 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
     }
-
     /**
      * Define the "api" routes for the application.
      *
