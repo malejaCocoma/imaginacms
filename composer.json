@@ -42,6 +42,8 @@
         "imagina/slider-module": "4.0.x-dev",
         "imagina/isearch-module": "4.0.x-dev",
         "imagina/ibanners-module": "4.0.x-dev",
+        "imagina/iprofile": "4.0.x-dev",
+        "imagina/isite": "4.0.x-dev",
 
         "imagina/flatly-theme": "4.0.x-dev"
     },
