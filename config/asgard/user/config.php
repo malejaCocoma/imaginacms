@@ -79,15 +79,32 @@ return [
     'casts' => [
     ],
     /*
-    |--------------------------------------------------------------------------
-    | Dynamic relations
-    |--------------------------------------------------------------------------
-    | Add relations that will be dynamically added to the User entity
+     |--------------------------------------------------------------------------
+     | Dynamic relations
+     |--------------------------------------------------------------------------
+     | Add relations that will be dynamically added to the User entity
      */
     'relations' => [
-//        'extension' => function (): \Illuminate\Database\Eloquent\Relations\BelongsTo {
-//            return $this->belongsTo(UserExtension::class, 'user_id', 'id')->first();
-//        }
+        'addresses' => function () {
+            return $this->hasMany(
+                \Modules\Iprofile\Entities\Address::class);
+        },
+
+        'fields' => function () {
+            return $this->hasMany(
+                \Modules\Iprofile\Entities\Field::class);
+        },
+
+        'settings' => function () {
+            return $this->hasMany(
+                \Modules\Iprofile\Entities\Setting::class,'related_id')->where('entity_name','user');
+        },
+
+        'departments' => function () {
+            return $this->belongsToMany(
+                \Modules\Iprofile\Entities\Department::class,
+                'iprofile__user_department');
+        }
     ],
     /*
     |--------------------------------------------------------------------------

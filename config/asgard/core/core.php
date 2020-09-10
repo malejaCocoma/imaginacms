@@ -1,5 +1,4 @@
 <?php
-
 return [
     /*
     |--------------------------------------------------------------------------
@@ -7,21 +6,18 @@ return [
     |--------------------------------------------------------------------------
     */
     'admin-prefix' => 'backend',
-
     /*
     |--------------------------------------------------------------------------
     | Location where your themes are located
     |--------------------------------------------------------------------------
     */
     'themes_path' => base_path() . '/Themes',
-
     /*
     |--------------------------------------------------------------------------
     | Which administration theme to use for the back end interface
     |--------------------------------------------------------------------------
     */
     'admin-theme' => 'AdminLTE',
-
     /*
     |--------------------------------------------------------------------------
     | AdminLTE skin
@@ -30,7 +26,7 @@ return [
     | colors are available for you to use: skin-blue, skin-green,
     | skin-black, skin-purple, skin-red and skin-yellow.
     */
-    'skin' => 'skin-blue',
+    'skin' => 'skin-red',
 
     /*
     |--------------------------------------------------------------------------
@@ -53,7 +49,6 @@ return [
     | the toolbar and other possible options.
     */
     'ckeditor-config-file-path' => '',
-
     /*
     |--------------------------------------------------------------------------
     | Middleware
@@ -72,7 +67,6 @@ return [
             'api',
         ],
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Define which assets will be available through the asset manager
@@ -162,7 +156,6 @@ return [
             'main.js',
         ],
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Enable module view overrides at theme locations
@@ -174,7 +167,6 @@ return [
     | useViewNamespaces.backend-theme needs to be enabled at module level
     */
     'enable-theme-overrides' => false,
-
     /*
     |--------------------------------------------------------------------------
     | Check if asgard was installed
