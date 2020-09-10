@@ -17,7 +17,7 @@ class CreateIbannersBannersTables extends Migration {
             $table->increments('id');
             $table->integer('order')->unsigned()->default(0);
             $table->string('type')->default('')->nullable();
-            $table->text('external_image_url')->default('')->nullable();
+            $table->text('external_image_url')->nullable();
             $table->string('target', 10)->nullable();
             $table->integer('position_id')->unsigned();
             $table->foreign('position_id')->references('id')->on('ibanners__positions')->onDelete('cascade');

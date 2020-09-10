@@ -23,7 +23,7 @@ class CreateSlidesTables extends Migration
       $table->integer('position')->unsigned()->default(0);
       $table->string('target', 10)->nullable();
       $table->text('options')->nullable();
-      $table->text('external_image_url')->default('')->nullable();
+      $table->text('external_image_url')->nullable();
       $table->string('type')->default('')->nullable();
       $table->timestamps();
     });
