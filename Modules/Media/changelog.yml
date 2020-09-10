@@ -2,7 +2,17 @@ url: https://github.com/AsgardCms/Platform
 versions:
     "@unreleased":
         added:
-            - Laravel 5.6 compatibility
+            
+	"4.0.3":
+      added:
+        - validate contentType in the creation in the MediaApiController
+    "4.0.2":
+        changed:
+           -  Watermark and validate extension file
+    "4.0.0":
+        added:
+            - created by column in file database
+            - NEW API IMAGINA V1, all resources
     "3.6.0":
         added:
             - New MediaMuliple component for vuejs projects

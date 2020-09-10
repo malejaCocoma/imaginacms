@@ -11,6 +11,7 @@ use Modules\Media\Image\Facade\Imagy;
 use Modules\Media\ValueObjects\MediaPath;
 use Modules\Tag\Contracts\TaggableInterface;
 use Modules\Tag\Traits\TaggableTrait;
+use Modules\User\Entities\Sentinel\User;
 
 /**
  * Class File
@@ -42,9 +43,10 @@ class File extends Model implements TaggableInterface, Responsable
         'height',
         'filesize',
         'folder_id',
+    'created_by',
     ];
     protected $appends = ['path_string', 'media_type'];
-    protected $casts = ['is_folder' => 'boolean',];
+  protected $casts = ['is_folder' => 'boolean'];
     protected static $entityNamespace = 'asgardcms/media';
 
     public function parent_folder()
@@ -98,4 +100,23 @@ class File extends Model implements TaggableInterface, Responsable
                 'Content-Type' => $this->mimetype,
             ]);
     }
+  
+  /**
+   * Created by relation
+   * @return mixed
+   */
+  public function createdBy()
+  {
+    return $this->belongsTo(User::class, 'created_by');
+  }
+  /**
+   * Created by relation
+   * @return mixed
+   */
+  public function folder()
+  {
+    return $this->belongsTo(File::class, 'folder_id');
+  }
+  
+  
 }
