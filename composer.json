@@ -92,8 +92,7 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "@php artisan clear-compiled",
-            "@ln -s /public ../public_html"
+            "@php artisan clear-compiled"
         ],
         "pre-update-cmd": [],
         "post-autoload-dump": [
