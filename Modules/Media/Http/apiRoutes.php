@@ -96,3 +96,21 @@ $router->group(['middleware' => 'api.token'], function (Router $router) {
         'middleware' => 'token-can:media.medias.destroy',
     ]);
 });
+
+
+/**
+ * IMAGINA API V1 ROUTES
+ */
+$router->group(['prefix' => '/imedia/v1'], function (Router $router) {
+
+//======  FILES
+  require('ApiRoutes/fileRoutes.php');
+
+//======  FOLDERS
+  require('ApiRoutes/folderRoutes.php');
+
+//======  BATCHS
+  require('ApiRoutes/batchRoutes.php');
+  
+  
+});

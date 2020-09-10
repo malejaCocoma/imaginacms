@@ -66,4 +66,15 @@ return [
         // Read module views from /resources/views/asgard/<module-name>
         'resources' => false,
     ],
+
+
+  'imageSize' => ['width' => 1024, 'height' => 768, 'quality' => 90],
+ 
+  'watermark' => [
+    'activated' => false,
+    'url' => 'modules/media/img/watermark/watermark.png',
+    'position' => 'top-left', //top, top-right, left, center, right, bottom-left, bottom, bottom-right
+    'x' => 10,
+    'y' => 10,
+  ],
 ];

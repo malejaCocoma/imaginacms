@@ -1,5 +1,5 @@
 {
-  "name": "idavoll/dashboard-module",
+  "name": "imagina/dashboard-module",
   "type": "asgard-module",
   "description": "Dashboard module for AsgardCMS. Handles the display of the dashboard.",
   "keywords": [
@@ -22,6 +22,9 @@
   "require": {
     "php": ">=7.0",
     "composer/installers": "~1.0"
+  },
+  "conflict": {
+    "idavoll/dashboard-module": "*"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.12"
