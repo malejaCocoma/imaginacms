@@ -44,6 +44,7 @@
         "imagina/ibanners-module": "4.0.x-dev",
         "imagina/iprofile": "4.0.x-dev",
         "imagina/isite": "4.0.x-dev",
+        "imagina/ilocations-module": "4.0.x-dev",
 
         "imagina/flatly-theme": "4.0.x-dev"
     },
@@ -91,7 +92,8 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "@php artisan clear-compiled"
+            "@php artisan clear-compiled",
+            "@ln -s /public ../public_html"
         ],
         "pre-update-cmd": [],
         "post-autoload-dump": [
