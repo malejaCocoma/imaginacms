@@ -15,7 +15,7 @@ class SlideApiTransformer extends Resource
       'caption' => $this->caption,
       'uri' => $this->uri,
       'url' => $this->url,
-      'active' => $this->active == 1 ? true : false,
+      'active' => $this->active ? 1 : 0,
       'type' => $this->type,
       'position' => (int)$this->position,
       'sliderId' => (int)$this->slider_id,

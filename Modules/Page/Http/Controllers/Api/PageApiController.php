@@ -1,26 +1,30 @@
 <?php
 
-namespace Modules\Iprofile\Http\Controllers\Api;
+namespace Modules\Page\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Ihelpers\Http\Controllers\Api\BaseApiController;
-use Modules\Iprofile\Transformers\AddressTransformer;
-use Modules\Iprofile\Http\Requests\CreateAddressRequest;
-use Modules\Iprofile\Http\Requests\UpdateAddressRequest;
-use Modules\Iprofile\Repositories\AddressRepository;
+use Modules\Page\Entities\Page;
+use Modules\Page\Http\Requests\CreatePageRequest;
+use Modules\Page\Http\Requests\UpdatePageRequest;
+use Modules\Page\Repositories\PageRepository;
+use Modules\Page\Transformers\FullPageTransformer;
+use Modules\Page\Transformers\PageApiTransformer;
+use Modules\Page\Transformers\PageTransformer;
 
-class AddressApiController extends BaseApiController
+class PageApiController extends BaseApiController
 {
-
-  private $address;
-
-  public function __construct(AddressRepository $address)
+  /**
+   * @var PageRepository
+   */
+  private $repoEntity;
+  
+  public function __construct(PageRepository $page)
   {
-    $this->address = $address;
+    $this->repoEntity = $page;
   }
-
+  
   /**
    * GET ITEMS
    *
@@ -31,26 +35,27 @@ class AddressApiController extends BaseApiController
     try {
       //Get Parameters from URL.
       $params = $this->getParamsRequest($request);
-
+      
       //Request to Repository
-      $addresses = $this->address->getItemsBy($params);
-
+      $dataEntity = $this->repoEntity->getItemsBy($params);
+      
       //Response
       $response = [
-        "data" => AddressTransformer::collection($addresses)
+        "data" => PageApiTransformer::collection($dataEntity)
       ];
-
+      
       //If request pagination add meta-page
-      $params->page ? $response["meta"] = ["page" => $this->pageTransformer($addresses)] : false;
+      $params->page ? $response["meta"] = ["page" => $this->pageTransformer($dataEntity)] : false;
     } catch (\Exception $e) {
       $status = $this->getStatusError($e->getCode());
       $response = ["errors" => $e->getMessage()];
     }
-
+    
     //Return response
     return response()->json($response, $status ?? 200);
   }
-
+  
+  
   /**
    * GET A ITEM
    *
@@ -62,27 +67,26 @@ class AddressApiController extends BaseApiController
     try {
       //Get Parameters from URL.
       $params = $this->getParamsRequest($request);
-
+      
       //Request to Repository
-      $address = $this->address->getItem($criteria, $params);
-
+      $dataEntity = $this->repoEntity->getItem($criteria, $params);
+      
       //Break if no found item
-      if (!$address) throw new \Exception('Item not found', 404);
-
+      if (!$dataEntity) throw new \Exception('Item not found', 404);
+      
       //Response
-      $response = ["data" => new AddressTransformer($address)];
-
-      //If request pagination add meta-page
-      $params->page ? $response["meta"] = ["page" => $this->pageTransformer($address)] : false;
+      $response = ["data" => new PageApiTransformer($dataEntity)];
+      
     } catch (\Exception $e) {
       $status = $this->getStatusError($e->getCode());
       $response = ["errors" => $e->getMessage()];
     }
-
+    
     //Return response
     return response()->json($response, $status ?? 200);
   }
-
+  
+  
   /**
    * CREATE A ITEM
    *
@@ -95,15 +99,15 @@ class AddressApiController extends BaseApiController
     try {
       //Get data
       $data = $request->input('attributes');
-
+      
       //Validate Request
-      $this->validateRequestApi(new CreateAddressRequest((array)$data));
-
+      $this->validateRequestApi(new CreatePageRequest((array)$data));
+      
       //Create item
-      $entity=$this->address->create($data);
-
+      $this->repoEntity->create($data);
+      
       //Response
-      $response = ["data" => new AddressTransformer($entity)];
+      $response = ["data" => ""];
       \DB::commit(); //Commit to Data Base
     } catch (\Exception $e) {
       \DB::rollback();//Rollback to Data Base
@@ -113,7 +117,8 @@ class AddressApiController extends BaseApiController
     //Return response
     return response()->json($response, $status ?? 200);
   }
-
+  
+  
   /**
    * UPDATE ITEM
    *
@@ -127,16 +132,16 @@ class AddressApiController extends BaseApiController
     try {
       //Get data
       $data = $request->input('attributes');
-
+      
       //Validate Request
-      $this->validateRequestApi(new UpdateAddressRequest((array)$data));
-
+      $this->validateRequestApi(new UpdatePageRequest((array)$data));
+      
       //Get Parameters from URL.
       $params = $this->getParamsRequest($request);
-
+      
       //Request to Repository
-      $this->address->updateBy($criteria, $data, $params);
-
+      $this->repoEntity->updateBy($criteria, $data, $params);
+      
       //Response
       $response = ["data" => 'Item Updated'];
       \DB::commit();//Commit to DataBase
@@ -145,11 +150,12 @@ class AddressApiController extends BaseApiController
       $status = $this->getStatusError($e->getCode());
       $response = ["errors" => $e->getMessage()];
     }
-
+    
     //Return response
     return response()->json($response, $status ?? 200);
   }
-
+  
+  
   /**
    * DELETE A ITEM
    *
@@ -162,10 +168,10 @@ class AddressApiController extends BaseApiController
     try {
       //Get params
       $params = $this->getParamsRequest($request);
-
+      
       //call Method delete
-      $this->address->deleteBy($criteria, $params);
-
+      $this->repoEntity->deleteBy($criteria, $params);
+      
       //Response
       $response = ["data" => ""];
       \DB::commit();//Commit to Data Base
@@ -174,9 +180,9 @@ class AddressApiController extends BaseApiController
       $status = $this->getStatusError($e->getCode());
       $response = ["errors" => $e->getMessage()];
     }
-
+    
     //Return response
     return response()->json($response, $status ?? 200);
   }
-
+  
 }
