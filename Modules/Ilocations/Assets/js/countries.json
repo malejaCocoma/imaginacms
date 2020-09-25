@@ -1032,7 +1032,8 @@
       "name":"\u00c5land Islands",
       "region_code":"150",
       "sub_region_code":"154",
-      "calling_code":"358"
+      "calling_code":"358",
+      "currency_symbol":""
    },
    "250":{
       "country_code":"250",
@@ -2119,7 +2120,8 @@
       "name":"Cura\u00e7ao",
       "region_code":"019",
       "sub_region_code":"029",
-      "calling_code":"599"
+      "calling_code":"599",
+      "currency_symbol":""
    },
    "533":{
       "country_code":"533",
@@ -2146,7 +2148,8 @@
       "name":"Sint Maarten (Dutch part)",
       "region_code":"019",
       "sub_region_code":"029",
-      "calling_code":"721"
+      "calling_code":"721",
+      "currency_symbol":""
    },
    "535":{
       "country_code":"535",
@@ -2158,7 +2161,8 @@
       "name":"Bonaire, Sint Eustatius and Saba",
       "region_code":"019",
       "sub_region_code":"029",
-      "calling_code":"599"
+      "calling_code":"599",
+      "currency_symbol":""
    },
    "540":{
       "country_code":"540",
@@ -2605,7 +2609,8 @@
       "name":"Saint Barth\u00e9lemy",
       "region_code":"019",
       "sub_region_code":"029",
-      "calling_code":"590"
+      "calling_code":"590",
+      "currency_symbol":""
    },
    "654":{
       "country_code":"654",
@@ -2674,7 +2679,8 @@
       "name":"Saint Martin (French part)",
       "region_code":"019",
       "sub_region_code":"029",
-      "calling_code":"590"
+      "calling_code":"590",
+      "currency_symbol":""
    },
    "666":{
       "country_code":"666",
@@ -2771,7 +2777,8 @@
       "name":"Serbia",
       "region_code":"150",
       "sub_region_code":"039",
-      "calling_code":"381"
+      "calling_code":"381",
+      "currency_symbol":""
    },
    "690":{
       "country_code":"690",
@@ -2924,7 +2931,8 @@
       "name":"South Sudan",
       "region_code":"002",
       "sub_region_code":"015",
-      "calling_code":"211"
+      "calling_code":"211",
+      "currency_symbol":""
    },
    "729":{
       "country_code":"729",
@@ -2937,7 +2945,8 @@
       "name":"Sudan",
       "region_code":"002",
       "sub_region_code":"015",
-      "calling_code":"249"
+      "calling_code":"249",
+      "currency_symbol":""
    },
    "732":{
       "country_code":"732",
@@ -3286,7 +3295,8 @@
       "name":"Guernsey",
       "region_code":"150",
       "sub_region_code":"154",
-      "calling_code":"44"
+      "calling_code":"44",
+      "currency_symbol":""
    },
    "832":{
       "country_code":"832",
@@ -3299,7 +3309,8 @@
       "name":"Jersey",
       "region_code":"150",
       "sub_region_code":"154",
-      "calling_code":"44"
+      "calling_code":"44",
+      "currency_symbol":""
    },
    "833":{
       "country_code":"833",
@@ -3312,7 +3323,8 @@
       "name":"Isle of Man",
       "region_code":"150",
       "sub_region_code":"154",
-      "calling_code":"44"
+      "calling_code":"44",
+      "currency_symbol":""
    },
    "834":{
       "country_code":"834",

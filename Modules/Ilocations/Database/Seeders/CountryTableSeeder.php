@@ -18,9 +18,11 @@ class CountryTableSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-
-        DB::table('ilocations__countries')->truncate();
-        $path = public_path('/modules/ilocations/js/countries.json');
+  
+      DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+      DB::table('ilocations__countries')->truncate();
+      DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        $path = base_path('/Modules/Ilocations/Assets/js/countries.json');
         $countries = json_decode(file_get_contents($path), true);
 
         foreach ($countries as $key => $country)
