@@ -108,7 +108,7 @@ class ConfigureDatabase implements SetupScript
     protected function askDatabaseName()
     {
         do {
-            $name = $this->command->ask('Enter your database name', 'asgardcms');
+            $name = $this->command->ask('Enter your database name', 'homestead');
             if ($name == '') {
                 $this->command->error('Database name is required');
             }
