@@ -45,6 +45,7 @@
         "imagina/iprofile-module": "4.0.x-dev",
         "imagina/isite-module": "4.0.x-dev",
         "imagina/ilocations-module": "4.0.x-dev",
+        "imagina/iredirect-module": "4.0.x-dev",
 
         "imagina/flatly-theme": "4.0.x-dev"
     },
