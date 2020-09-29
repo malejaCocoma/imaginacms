@@ -3,6 +3,8 @@ services:
   app:
     build:
       context: ./docker/app
+      args:
+        DOMAIN1: site1.local
     image: asgardcms/app:latest
     ports:
       - 80:80
