@@ -6,3 +6,10 @@
 .travis.yml export-ignore
 .php_cs export-ignore
 travis.sh export-ignore
+* text eol=lf
+*.ttf binary
+*.eot binary
+*.woff binary
+*.woff2 binary
+*.png binary
+*.gif binary
