@@ -32,7 +32,7 @@ class EloquentRedirectRepository extends EloquentBaseRepository implements Redir
   {
     $redirect = $this->model->create($data);
     
-    event(new RedirectWasCreated($redirect, $data));
+    //event(new RedirectWasCreated($redirect, $data));
     
     return $redirect;
   }

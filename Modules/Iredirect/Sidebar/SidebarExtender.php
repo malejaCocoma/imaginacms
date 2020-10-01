@@ -31,29 +31,7 @@ class SidebarExtender implements \Maatwebsite\Sidebar\SidebarExtender
      */
     public function extendWith(Menu $menu)
     {
-        $menu->group(trans('core::sidebar.content'), function (Group $group) {
-
-            $group->item(trans('iredirect::common.iredirect'), function (Item $item) {
-                $item->icon('fa fa-random');
-
-                $item->item(trans('iredirect::redirect.list'), function (Item $item) {
-                    $item->icon('fa fa-repeat');
-                    $item->weight(5);
-                    $item->append('crud.iredirect.redirect.create');
-                    $item->route('crud.iredirect.redirect.index');
-                    $item->authorize(
-                        $this->auth->hasAccess('iredirect.redirects.index')
-                    );
-                });
-
-                $item->authorize(
-                    $this->auth->hasAccess('iredirect.redirects.index')
-                );
-
-            });
-
-
-        });
+   
 
         return $menu;
     }

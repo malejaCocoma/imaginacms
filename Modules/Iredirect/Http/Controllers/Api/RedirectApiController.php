@@ -76,7 +76,7 @@ class RedirectApiController extends BaseApiController
       if (!$dataEntity) throw new \Exception('Item not found', 404);
       
       //Response
-      $response = ["data" => new EntitRedirectApiTransformeryTransformer($dataEntity)];
+      $response = ["data" => new RedirectApiTransformer($dataEntity)];
       
     } catch (\Exception $e) {
       $status = $this->getStatusError($e->getCode());

@@ -40,7 +40,7 @@ class MediaTransformer extends Resource
             'created_at' => $this->resource->created_at,
             'folder_id' => $this->resource->folder_id,
             'small_thumb' => $this->imagy->getThumbnail($this->resource->path, 'smallThumb'),
-            'mediumThumb' => $this->imagy->getThumbnail($this->resource->path, 'mediumThumb'),
+            'medium_thumb' => $this->imagy->getThumbnail($this->resource->path, 'mediumThumb'),
             'urls' => [
                 'delete_url' => $this->getDeleteUrl(),
             ],
