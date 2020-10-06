@@ -44,6 +44,21 @@
 @yield('scripts-owl')
 @yield('scripts')
 
+
+{{-- Custom CSS --}}
+@php $customCSS = @setting('isite::custom-css'); @endphp
+@if(isset($customCSS) && !empty($customCSS))
+<style> {!! $customCSS !!} </style>
+@endif
+
+
+{{-- Custom JS --}}
+@php $customJS = @setting('isite::custom-js'); @endphp
+@if(isset($customJS) && !empty($customJS))
+    <script> {!! $customJS !!} </script>
+@endif
+
+
 <?php if (Setting::has('isite::chat')): ?>
 {!! Setting::get('isite::chat') !!}
 <?php endif; ?>
