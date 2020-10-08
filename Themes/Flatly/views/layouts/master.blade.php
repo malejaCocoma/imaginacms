@@ -17,45 +17,41 @@
     <link rel="shortcut icon" href="{{ Theme::url('favicon.ico') }}">
     <link rel="canonical" href="{{canonical_url()}}"/>
     {!! Theme::style('css/main.css?v='.config('app.version')) !!}
-
+    {!! Theme::script('js/app.js?v='.config('app.version')) !!}
     @stack('css-stack')
+
 </head>
 <body>
+
+
 <div id="page-wrapper">
+    @include('partials.variables')
     @include('partials.header')
     @yield('content')
     @include('partials.footer')
 </div>
-@auth
-    @include('partials.admin-bar')
-@endauth
-@include('partials.navigation')
-
-<div class="container">
-    @yield('content')
-</div>
-@include('partials.footer')
 
 {!! Theme::style('css/secondary.css?v='.config('app.version')) !!}
-{!! Theme::script('js/app.js?v='.config('app.version')) !!}
+
 {!! Theme::script('js/all.js?v='.config('app.version')) !!}
 {!! Theme::script('js/secondary.js?v='.config('app.version')) !!}
 
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
 @yield('scripts-owl')
+@yield('scripts-header')
 @yield('scripts')
 
 
 {{-- Custom CSS --}}
-@php $customCSS = @setting('isite::custom-css'); @endphp
-@if(isset($customCSS) && !empty($customCSS))
-<style> {!! $customCSS !!} </style>
+@if((Setting::has('isite::customCss')))
+    <style> {!! Setting::get('isite::customCss') !!} </style>
 @endif
 
 
 {{-- Custom JS --}}
-@php $customJS = @setting('isite::custom-js'); @endphp
-@if(isset($customJS) && !empty($customJS))
-    <script> {!! $customJS !!} </script>
+@if(Setting::has('isite::customJs'))
+    <script> {!! Setting::get('isite::customJs') !!} </script>
 @endif
 
 

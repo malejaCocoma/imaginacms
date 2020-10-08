@@ -232,9 +232,9 @@ class EloquentFolderRepository extends EloquentBaseRepository implements FolderR
           ->where("is_folder",true)
           ->where("filename",$filter->folderName)
           ->first();
-        
+  
         if(isset($folder->id)){
-          $query->where('folder_id',$folder->id);
+          $query->where('folder_id',$filter->folderId ?? $folder->id);
         }
       }
       

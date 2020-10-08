@@ -76,6 +76,10 @@ class FolderApiController extends BaseApiController
       //Get Parameters from URL.
       $params = $this->getParamsRequest($request);
       
+      if (isset($params->filter->folderId) && $params->filter->folderId != $folder->id) {
+        $folder = $this->folder->findFolder($params->filter->folderId);
+      }
+      
       if ($folder->folder_id !== 0) {
         $this->breadcrumb[] = ['id' => $folder->id, 'name' => $folder->filename];
       }
@@ -121,22 +125,23 @@ class FolderApiController extends BaseApiController
     try {
       //Get data
       $data = $request->input('attributes');
-      
+      $params = $this->getParamsRequest($request);
       //Validate Request
       $this->validateRequestApi(new CreateFolderRequest((array)$data));
       
       //Create item
       $folder = $this->folder->create($data);
-  
-      $folder->created_by =  $params->user->id;
+      
+      $folder->created_by = $params->user->id;
       $folder->save();
-  
-      event(new FileWasUploaded($savedFile));
+      
+      event(new FileWasUploaded($folder));
       
       //Response
       $response = ["data" => ""];
       \DB::commit(); //Commit to Data Base
     } catch (\Exception $e) {
+      \Log::error($e);
       \DB::rollback();//Rollback to Data Base
       $status = $this->getStatusError($e->getCode());
       $response = ["errors" => $e->getMessage()];
@@ -144,7 +149,6 @@ class FolderApiController extends BaseApiController
     //Return response
     return response()->json($response, $status ?? 200);
   }
-  
   /**
    * UPDATE ITEM
    *
@@ -214,32 +218,32 @@ class FolderApiController extends BaseApiController
   
   
   /**
-     * GET ALL NESTABLE
-     *
-     * @return mixed
-     */
-    public function allNestable(Request $request)
-    {
-      try {
-        //Get Parameters from URL.
-        $params = $this->getParamsRequest($request);
-  
-        $array = [];
-        $folders = $this->folder->allNested()->nest()->listsFlattened('filename', null, 0, $array, '--- ');
-        
-        //Response
-        $response = [
-          "data" => $folders
-        ];
-  
-        //If request pagination add meta-page
-        $params->page ? $response["meta"] = ["page" => $this->pageTransformer($dataEntity)] : false;
-      } catch (\Exception $e) {
-        $status = $this->getStatusError($e->getCode());
-        $response = ["errors" => $e->getMessage()];
-      }
-  
-      //Return response
-      return response()->json($response, $status ?? 200);
+   * GET ALL NESTABLE
+   *
+   * @return mixed
+   */
+  public function allNestable(Request $request)
+  {
+    try {
+      //Get Parameters from URL.
+      $params = $this->getParamsRequest($request);
+      
+      $array = [];
+      $folders = $this->folder->allNested()->nest()->listsFlattened('filename', null, 0, $array, '--- ');
+      
+      //Response
+      $response = [
+        "data" => $folders
+      ];
+      
+      //If request pagination add meta-page
+      $params->page ? $response["meta"] = ["page" => $this->pageTransformer($dataEntity)] : false;
+    } catch (\Exception $e) {
+      $status = $this->getStatusError($e->getCode());
+      $response = ["errors" => $e->getMessage()];
     }
+    
+    //Return response
+    return response()->json($response, $status ?? 200);
+  }
 }
