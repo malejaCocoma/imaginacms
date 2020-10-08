@@ -119,7 +119,7 @@ class MediaApiController extends BaseApiController
       // $data = $request->input('attributes');
       
       //Validate Request
-      //$this->validateRequestApi(new UploadMediaRequest((array)$data));
+      $this->validateRequestApi(new UploadMediaRequest($request->all()));
       $file = $request->file('file');
       $contentType = $request["Content-Type"];
       //return [$contentType];

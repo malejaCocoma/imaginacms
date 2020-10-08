@@ -32,7 +32,7 @@ class ProvinceTableSeeder extends Seeder
                     Province::create([
                         'name' => $province['region'],
                         'iso_2' => $province['iso_2'],
-                        'country_id' => $country->country_code
+                        'country_id' => $country->id
                     ]);
 
     }

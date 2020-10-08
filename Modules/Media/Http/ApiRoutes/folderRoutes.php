@@ -42,8 +42,8 @@ $router->group(['prefix' => '/folders','middleware' => ['auth:api']], function (
   ]);
   
   $router->delete('/{folder}', [
-    'as' => 'api.imedia.folders.update',
-    'uses' => 'NewApi\FolderApiController@update',
+    'as' => 'api.imedia.folders.delete',
+    'uses' => 'NewApi\FolderApiController@delete',
     'middleware' => 'auth-can:media.folders.destroy'
   ]);
 
