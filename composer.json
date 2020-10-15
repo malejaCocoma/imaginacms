@@ -95,8 +95,7 @@
         "post-install-cmd": [
             "@php artisan clear-compiled",
             "cp -Rf ./Themes/Adminlte/iadmin ./public/",
-            "mkdir ./Themes/ImaginaTheme",
-            "cp -Rf ./Themes/Flatly/* ./Themes/ImaginaTheme/"
+            "cp -Rf ./Themes/Flatly ./Themes/ImaginaTheme"
         ],
         "pre-update-cmd": [],
         "post-autoload-dump": [
