@@ -11,6 +11,8 @@ return [
         'navmenu' => \Nwidart\Menus\Presenters\Bootstrap\NavMenuPresenter::class,
         'adminlte' => \Nwidart\Menus\Presenters\Admin\AdminltePresenter::class,
         'zurbmenu' => \Nwidart\Menus\Presenters\Foundation\ZurbMenuPresenter::class,
+        'imagina-navbar' => \Modules\Menu\Presenters\NavbarPresenter::class,
+        'imagina-navbar-right' => \Modules\Menu\Presenters\NavbarRightPresenter::class,
     ],
 
     'ordering' => false,
