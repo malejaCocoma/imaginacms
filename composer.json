@@ -94,7 +94,7 @@
     "scripts": {
         "post-install-cmd": [
             "@php artisan clear-compiled",
-            "cp -Rf ./Themes/Adminlte/iadmin ./public/",
+            "ln -s ../Themes/Adminlte/iadmin/ public/iadmin",
             "cp -Rf ./Themes/Flatly ./Themes/ImaginaTheme"
         ],
         "pre-update-cmd": [],
