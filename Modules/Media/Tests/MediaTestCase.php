@@ -15,7 +15,6 @@ use Modules\Core\Providers\CoreServiceProvider;
 use Modules\Media\Providers\MediaServiceProvider;
 use Modules\Tag\Providers\TagServiceProvider;
 use Nwidart\Modules\LaravelModulesServiceProvider;
-use Nwidart\Modules\Providers\BootstrapServiceProvider;
 use Orchestra\Testbench\TestCase;
 
 abstract class MediaTestCase extends TestCase
@@ -25,7 +24,6 @@ abstract class MediaTestCase extends TestCase
         return [
             TranslationServiceProvider::class,
             LaravelModulesServiceProvider::class,
-            BootstrapServiceProvider::class,
             CoreServiceProvider::class,
             TagServiceProvider::class,
             \Modules\Media\Image\ImageServiceProvider::class,
@@ -56,11 +54,11 @@ abstract class MediaTestCase extends TestCase
         ]);
         $app['config']->set('modules.paths.modules', realpath(__DIR__ . '/../Modules'));
         $app['config']->set('database.default', 'sqlite');
-        $app['config']->set('database.connections.sqlite', array(
+        $app['config']->set('database.connections.sqlite', [
             'driver' => 'sqlite',
             'database' => ':memory:',
             'prefix' => '',
-        ));
+        ]);
         $app['config']->set('translatable.locales', ['en', 'fr']);
         $app['config']->set('app.url', 'http://localhost');
         $app['config']->set('filesystems.disks.local.url', 'http://localhost');

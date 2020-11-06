@@ -14,4 +14,3 @@ yarn.lock
 .phpunit.result.cache
 .php_cs.cache
 .idea
-noCleaning

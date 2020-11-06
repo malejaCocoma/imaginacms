@@ -15,10 +15,12 @@
         <?php $i ++; ?>
         <?php $class = ''; ?>
         <?php foreach ($errors->getMessages() as $field => $messages): ?>
-            <?php if (substr($field, 0, strpos($field, ".")) == $locale) $class = 'error' ?>
+            <?php if (substr($field, 0, strpos($field, ".")) == $locale) {
+    $class = 'error';
+} ?>
         <?php endforeach ?>
         <li class="{{ App::getLocale() == $locale ? 'active' : '' }} {{ $class }}">
-            <a href="#tab_{{ $prefix.$i }}" data-toggle="tab">{{ trans('core::core.tab.'. strtolower($language['name'])) }}</a>
+            <a href="#tab_{{ $prefix.$i }}" data-toggle="tab"><i class="flag-icon flag-icon-{{ $locale }}"></i> &nbsp; {{ trans('core::core.tab.'. strtolower($language['name'])) }}</a>
         </li>
     <?php endforeach; ?>
 </ul>
