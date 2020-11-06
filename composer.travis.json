@@ -1,5 +1,5 @@
 {
-    "name": "asgardcms/platform",
+    "name": "imagina/cms-platform",
     "description": "The AsgardCms application.",
     "keywords": [
         "cms",
@@ -76,7 +76,9 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "@php artisan clear-compiled"
+            "@php artisan clear-compiled",
+            "ln -s ../Themes/Adminlte/iadmin/ public/iadmin",
+            "cp -Rf ./Themes/Flatly ./Themes/ImaginaTheme"
         ],
         "pre-update-cmd": [],
         "post-autoload-dump": [
