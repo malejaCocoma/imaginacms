@@ -8,5 +8,16 @@
     "Tag": true,
     "Translation": true,
     "User": true,
-    "Workshop": true
+    "Workshop": true,
+    "Ibanners": true,
+    "Iblog": true,
+    "Iforms": true,
+    "Ihelpers": true,
+    "Ilocations": true,
+    "Iprofile": true,
+    "Iredirect": true,
+    "Isearch": true,
+    "Isite": true,
+    "Notification": true,
+    "Slider": true
 }

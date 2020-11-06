@@ -38,6 +38,7 @@
         "tightenco/ziggy": "^0.9.4",
         "typicms/nestablecollection": "^1.1",
         "venturecraft/revisionable": "^1.35",
+        "laravel/passport": "^9.3",
 
         "imagina/core-module": "4.0.x-dev",
         "imagina/dashboard-module": "4.0.x-dev",
