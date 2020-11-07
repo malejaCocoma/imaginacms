@@ -10,12 +10,6 @@
     ],
     "license": "MIT",
     "type": "project",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/imagina/laravel-menus.git"
-        }
-    ],
     "require": {
         "php": "^7.2.5",
         "astrotomic/laravel-translatable": "^11.9",
