@@ -2,10 +2,10 @@
 
 namespace Modules\Slider\Transformers;
 
-use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Modules\User\Transformers\UserProfileTransformer;
 
-class SlideApiTransformer extends Resource
+class SlideApiTransformer extends JsonResource
 {
   public function toArray($request)
   {

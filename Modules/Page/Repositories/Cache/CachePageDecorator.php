@@ -122,11 +122,12 @@ class CachePageDecorator extends BaseCacheDecorator implements PageRepository
     }
 
 
-  /**
-   * List or resources
-   *
-   * @return collection
-   */
+    /**
+     * List or resources
+     *
+     * @param $params
+     * @return collection
+     */
   public function getItemsBy($params)
   {
     return $this->remember(function () use ($params) {
@@ -135,11 +136,13 @@ class CachePageDecorator extends BaseCacheDecorator implements PageRepository
   }
 
 
-  /**
-   * find a resource by id or slug
-   *
-   * @return object
-   */
+    /**
+     * find a resource by id or slug
+     *
+     * @param $criteria
+     * @param $params
+     * @return object
+     */
   public function getItem($criteria, $params)
   {
     return $this->remember(function () use ($criteria, $params) {
@@ -148,22 +151,26 @@ class CachePageDecorator extends BaseCacheDecorator implements PageRepository
   }
 
 
-  /**
-   * create a resource
-   *
-   * @return mixed
-   */
+    /**
+     * create a resource
+     *
+     * @param $data
+     * @return mixed
+     */
   public function create($data)
   {
     $this->clearCache();
     return $this->repository->create($data);
   }
 
-  /**
-   * update a resource
-   *
-   * @return mixed
-   */
+    /**
+     * update a resource
+     *
+     * @param $criteria
+     * @param $data
+     * @param $params
+     * @return mixed
+     */
   public function updateBy($criteria, $data, $params)
   {
     $this->clearCache();
@@ -171,11 +178,13 @@ class CachePageDecorator extends BaseCacheDecorator implements PageRepository
     return $this->repository->updateBy($criteria, $data, $params);
   }
 
-  /**
-   * destroy a resource
-   *
-   * @return mixed
-   */
+    /**
+     * destroy a resource
+     *
+     * @param $criteria
+     * @param $params
+     * @return mixed
+     */
   public function deleteBy($criteria, $params)
   {
     $this->clearCache();

@@ -128,23 +128,23 @@ class EloquentGeozonesRepository extends EloquentBaseRepository implements Geozo
     if ($geozone) {
 
       if (isset($data['countries'])){
-        $geozone->countries()->sync(array_get($data, 'countries', []));
+        $geozone->countries()->sync(Arr::get($data, 'countries', []));
       }
 
       if (isset($data['cities'])){
-        $geozone->cities()->sync(array_get($data, 'cities', []));
+        $geozone->cities()->sync(Arr::get($data, 'cities', []));
       }
 
       if (isset($data['provinces'])){
-        $geozone->provinces()->sync(array_get($data, 'provinces', []));
+        $geozone->provinces()->sync(Arr::get($data, 'provinces', []));
       }
 
       if (isset($data['polygons'])){
-        $geozone->polygons()->sync(array_get($data, 'polygons', []));
+        $geozone->polygons()->sync(Arr::get($data, 'polygons', []));
       }
 
       if (isset($data['neighborhoods'])){
-        $geozone->neighborhoods()->sync(array_get($data, 'neighborhoods', []));
+        $geozone->neighborhoods()->sync(Arr::get($data, 'neighborhoods', []));
       }
     }
 
@@ -158,23 +158,23 @@ class EloquentGeozonesRepository extends EloquentBaseRepository implements Geozo
     if ($geozone) {
 
       if (isset($data['countries'])){
-        $geozone->countries()->sync(array_get($data, 'countries', []));
+        $geozone->countries()->sync(Arr::get($data, 'countries', []));
       }
 
       if (isset($data['cities'])){
-        $geozone->cities()->sync(array_get($data, 'cities', []));
+        $geozone->cities()->sync(Arr::get($data, 'cities', []));
       }
 
       if (isset($data['provinces'])){
-        $geozone->provinces()->sync(array_get($data, 'provinces', []));
+        $geozone->provinces()->sync(Arr::get($data, 'provinces', []));
       }
 
       if (isset($data['polygons'])){
-        $geozone->polygons()->sync(array_get($data, 'polygons', []));
+        $geozone->polygons()->sync(Arr::get($data, 'polygons', []));
       }
 
       if (isset($data['neighborhoods'])){
-        $geozone->neighborhoods()->sync(array_get($data, 'neighborhoods', []));
+        $geozone->neighborhoods()->sync(Arr::get($data, 'neighborhoods', []));
       }
     }
 

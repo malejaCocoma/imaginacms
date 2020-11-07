@@ -2,11 +2,11 @@
 
 namespace Modules\Iblog\Transformers;
 
-use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Modules\User\Transformers\UserProfileTransformer;
 use Modules\Media\Image\Imagy;
 
-class CategoryTransformer extends Resource
+class CategoryTransformer extends JsonResource
 {
    /**
     * @var Imagy

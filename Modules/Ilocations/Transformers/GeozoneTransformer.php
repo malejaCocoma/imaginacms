@@ -3,10 +3,10 @@
 
 namespace Modules\Ilocations\Transformers;
 
-use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-class GeozoneTransformer extends Resource
+class GeozoneTransformer extends JsonResource
 {
 
   public function toArray($request)

@@ -2,9 +2,9 @@
 
 namespace Modules\Iredirect\Transformers;
 
-use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\JsonResource;
 
-class RedirectApiTransformer extends Resource
+class RedirectApiTransformer extends JsonResource
 {
   public function toArray($request)
   {

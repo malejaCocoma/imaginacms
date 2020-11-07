@@ -390,7 +390,7 @@ class EloquentFileRepository extends EloquentBaseRepository implements FileRepos
       event($event = new FileIsUpdating($model, $data));
       $model->update($event->getAttributes());
   
-      $model->setTags(array_get($data, 'tags', []));
+      $model->setTags(Arr::get($data, 'tags', []));
   
       event(new FileWasUpdated($model));
       

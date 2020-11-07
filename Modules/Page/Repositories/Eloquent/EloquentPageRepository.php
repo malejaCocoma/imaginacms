@@ -338,7 +338,7 @@ class EloquentPageRepository extends EloquentBaseRepository implements PageRepos
 
         if(isset($model->id)){
 
-            if (array_get($data, 'is_home') === '1') {
+            if (Arr::get($data, 'is_home') === '1') {
                 $this->removeOtherHomepage($model->id);
             }
 
@@ -347,7 +347,7 @@ class EloquentPageRepository extends EloquentBaseRepository implements PageRepos
 
             event(new PageWasUpdated($model, $data));
 
-            $model->setTags(array_get($data, 'tags', []));
+            $model->setTags(Arr::get($data, 'tags', []));
 
             return $model;
 

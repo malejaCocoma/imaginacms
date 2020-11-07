@@ -29,10 +29,10 @@ class IlocationsServiceProvider extends ServiceProvider
         $this->app['events']->listen(BuildingSidebar::class, RegisterIlocationsSidebar::class);
 
         $this->app['events']->listen(LoadingBackendTranslations::class, function (LoadingBackendTranslations $event) {
-            $event->load('countries', array_dot(trans('ilocations::countries')));
-            $event->load('provinces', array_dot(trans('ilocations::provinces')));
-            $event->load('cities', array_dot(trans('ilocations::cities')));
-            $event->load('polygons', array_dot(trans('ilocations::polygons')));
+            $event->load('countries', Arr::dot(trans('ilocations::countries')));
+            $event->load('provinces', Arr::dot(trans('ilocations::provinces')));
+            $event->load('cities', Arr::dot(trans('ilocations::cities')));
+            $event->load('polygons', Arr::dot(trans('ilocations::polygons')));
             // append translations
 
 

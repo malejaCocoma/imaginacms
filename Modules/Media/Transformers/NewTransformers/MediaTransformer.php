@@ -2,14 +2,14 @@
 
 namespace Modules\Media\Transformers\NewTransformers;
 
-use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Modules\Media\Helpers\FileHelper;
 use Modules\Media\Image\Imagy;
 use Modules\Media\Image\ThumbnailManager;
 use Modules\Iprofile\Transformers\UserTransformer;
 
-class MediaTransformer extends Resource
+class MediaTransformer extends JsonResource
 {
   /**
    * @var Imagy

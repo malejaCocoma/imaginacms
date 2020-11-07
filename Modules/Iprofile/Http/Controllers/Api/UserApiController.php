@@ -105,7 +105,7 @@ class UserApiController extends BaseApiController
             $params->page ? $response["meta"] = ["page" => $this->pageTransformer($user)] : false;
         } catch (\Exception $e) {
             $status = $this->getStatusError($e->getCode());
-            $response = ["errors" => $e->getMessage()];
+            $response = ["errors" => $this->getErrorMessage($e)];
         }
 
         //Return response
@@ -204,7 +204,7 @@ class UserApiController extends BaseApiController
 
             // sync tables
             if (isset($data["departments"]) && count($data["departments"])) {
-                $user->departments()->sync(array_get($data, 'departments', []));
+                $user->departments()->sync(Arr::get($data, 'departments', []));
             }
 
             //Create fields

@@ -178,12 +178,12 @@ if (!function_exists('saveImage')) {
     $watermark = json_decode(json_encode(array_merge($default_watermark, $watermark)));
 
     //Defined return.
-    if (ends_with($value, '.jpg')) {
+    if (Str::endsWith($value, '.jpg')) {
       return $value;
     }
 
     // if a base64 was sent, store it in the db
-    if (starts_with($value, 'data:image')) {
+    if (Str::startsWith($value, 'data:image')) {
       // 0. Make the image
       $image = \Image::make($value);
       // resize and prevent possible upsizing
@@ -198,7 +198,7 @@ if (!function_exists('saveImage')) {
 
       //setting end file (format)
       $endFile = 'jpg';
-      if(starts_with($value, 'data:image/png;'))
+      if(Str::startsWith($value, 'data:image/png;'))
         $endFile = 'png';
 
       \Log::info([$endFile, $size->imagesize->quality]);

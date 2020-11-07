@@ -38,8 +38,8 @@ class IbannersServiceProvider extends ServiceProvider
       $this->app['events']->listen(BuildingSidebar::class, RegisterIbannersSidebar::class);
 
       $this->app['events']->listen(LoadingBackendTranslations::class, function (LoadingBackendTranslations $event) {
-          $event->load('position', array_dot(trans('ibanners::position')));
-          $event->load('banners', array_dot(trans('ibanners::banners')));
+          $event->load('position', Arr::dot(trans('ibanners::position')));
+          $event->load('banners', Arr::dot(trans('ibanners::banners')));
           // append translations
 
       });

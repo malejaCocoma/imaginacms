@@ -2,10 +2,10 @@
 
 namespace Modules\Ilocations\Transformers;
 
-use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-class ProvinceTransformer extends Resource
+class ProvinceTransformer extends JsonResource
 {
   public function toArray($request)
   {

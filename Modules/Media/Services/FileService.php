@@ -29,9 +29,10 @@ class FileService
     }
 
     /**
-     * @param  UploadedFile $file
-     * @param int $parentId
+     * @param  UploadedFile  $file
+     * @param  int  $parentId
      * @return mixed
+     * @throws \Illuminate\Contracts\Filesystem\FileExistsException
      */
     public function store(UploadedFile $file, int $parentId = 0)
     {

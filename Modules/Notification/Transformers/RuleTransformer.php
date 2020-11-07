@@ -3,10 +3,10 @@
 
 namespace Modules\Notification\Transformers;
 
-use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Modules\Iprofile\Transformers\UserTransformer;
 
-class RuleTransformer extends Resource
+class RuleTransformer extends JsonResource
 {
   public function toArray($request)
   {

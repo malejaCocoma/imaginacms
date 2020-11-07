@@ -2,10 +2,10 @@
 
 namespace Modules\Ibanners\Transformers;
 
-use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Modules\User\Transformers\UserProfileTransformer;
 
-class BannerApiTransformer extends Resource
+class BannerApiTransformer extends JsonResource
 {
   public function toArray($request)
   {
