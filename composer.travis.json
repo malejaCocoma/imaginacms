@@ -60,7 +60,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "4.0.x-dev"
+            "dev-imaginacms8.x": "8.0.x-dev"
         },
         "laravel": {
             "dont-discover": []
