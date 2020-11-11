@@ -22,25 +22,31 @@ modules.forEach(function(mname,i) {
 /**
  * Compile sass
  */
-mix.sass('resources/scss/main.scss', 'assets/css/main.css')
-  .sass('resources/scss/secondary.scss', 'assets/css/secondary.css');
+mix.sass('resources/scss/main.scss', 'assets/css/app.css')
+  .sass('resources/scss/secondary.scss', 'assets/css/secondary.css')
+  .sass('node_modules/toastr/toastr.scss','assets/css/toastr.css');
+
+/**
+ * Unified secondary.css
+ */
+mix.styles([
+  'assets/css/toastr.css',
+  'assets/css/secondary.css'
+], 'assets/css/secondary.css');
 
 /**
  * Concat scripts
  */
 mix.scripts([
-  'node_modules/jquery/dist/jquery.js',
   'node_modules/popper.js/dist/umd/popper.min.js',
   'node_modules/bootstrap/dist/js/bootstrap.min.js',
   'node_modules/owl.carousel/dist/owl.carousel.min.js',
-  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
-  'node_modules/prismjs/prism.js',
-], 'assets/js/all.js')
+  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+], 'assets/js/secondary.js')
   .scripts([
-    'resources/js/imagina.js'
-  ], 'assets/js/secondary.js')
-  .scripts([
-    'resources/js/app.js',...jsfilestomerge
+    'resources/js/app.js',
+    'resources/js/imagina.js',
+    ...jsfilestomerge,
   ], 'resources/js/main.js');
 
 
@@ -89,7 +95,7 @@ mix.copy(
 );
 
 
-mix.js(['resources/js/main.js',], 'assets/js/app.js');
+mix.js(['resources/js/main.js'], 'assets/js/app.js');
 
 /**
  * Publishing the assets
@@ -99,5 +105,6 @@ mix.webpackConfig({
     new WebpackShellPlugin({onBuildEnd: ['php ../../artisan stylist:publish ' + themeInfo.name]})
   ]
 });
+
 
 
