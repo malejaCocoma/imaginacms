@@ -50,6 +50,7 @@ class IprofileServiceProvider extends ServiceProvider
     $this->publishConfig('iprofile', 'config');
     $this->publishConfig('iprofile', 'permissions');
     $this->publishConfig('iprofile', 'settings');
+    $this->publishConfig('iprofile', 'settings-fields');
     $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
   }
 

@@ -3,3 +3,5 @@
 /vendor/
 Modules/
 composer.lock
+.idea
+.git

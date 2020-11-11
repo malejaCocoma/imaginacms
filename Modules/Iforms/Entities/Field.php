@@ -25,12 +25,16 @@ class Field extends Model
     'form_id',
     'selectable',
     'order',
+    'prefix',
+    'suffix',
   ];
 
   protected $presenter = FieldPresenter::class;
 
   protected $casts = [
-    'selectable' => 'array'
+    'selectable' => 'array',
+    'prefix' => 'array',
+    'suffix' => 'array',
   ];
 
   public function form()
@@ -46,6 +50,26 @@ class Field extends Model
   public function setSelectableAttribute($value)
   {
     $this->attributes['selectable'] = json_encode($value);
+  }
+
+  public function getPrefixAttribute($value)
+  {
+    return json_decode($value);
+  }
+
+  public function setPrefixAttribute($value)
+  {
+    $this->attributes['prefix'] = json_encode($value);
+  }
+
+  public function getSuffixAttribute($value)
+  {
+    return json_decode($value);
+  }
+
+  public function setSuffixAttribute($value)
+  {
+    $this->attributes['suffix'] = json_encode($value);
   }
 
 

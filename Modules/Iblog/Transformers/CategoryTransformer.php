@@ -44,7 +44,8 @@ class CategoryTransformer extends JsonResource
          'parent' => new CategoryTransformer($this->whenLoaded('parent')),
          'parentId' => $this->parent_id,
          'children' => CategoryTransformer::collection($this->whenLoaded('children')),
-         'posts' => PostTransformer::collection($this->whenLoaded('posts'))
+         'posts' => PostTransformer::collection($this->whenLoaded('posts')),
+         'mediaFiles' => $this->mediaFiles()
       ];
 
       $filter = json_decode($request->filter);

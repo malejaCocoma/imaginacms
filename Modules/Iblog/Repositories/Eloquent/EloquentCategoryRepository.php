@@ -73,18 +73,13 @@ class EloquentCategoryRepository extends EloquentBaseRepository implements Categ
             if (isset($filter->search)) { //si hay que filtrar por rango de precio
                 $criterion = $filter->search;
                 $param = explode(' ', $criterion);
-                $query->where(function ($query) use ($param) {
-                    foreach ($param as $index => $word) {
-                        if ($index == 0) {
-                            $query->where('title', 'like', "%" . $word . "%");
-                            $query->orWhere('sku', 'like', "%" . $word . "%");
-                        } else {
-                            $query->orWhere('title', 'like', "%" . $word . "%");
-                            $query->orWhere('sku', 'like', "%" . $word . "%");
-                        }
-                    }
-
+        $criterion = $filter->search;
+        //find search in columns
+        $query->where(function ($query) use ($filter, $criterion) {
+          $query->whereHas('translations', function (Builder $q) use ($criterion) {
+            $q->where('title', 'like', "%{$criterion}%");
                 });
+        })->orWhere('id', 'like', '%' . $filter->search . '%');
             }
 
             //Filter by date

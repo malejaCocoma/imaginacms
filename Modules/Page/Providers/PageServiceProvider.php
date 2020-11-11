@@ -56,6 +56,7 @@ class PageServiceProvider extends ServiceProvider
     {
         $this->publishConfig('page', 'config');
         $this->publishConfig('page', 'permissions');
+        $this->publishConfig('page', 'crud-fields');
 
         $this->app[TagManager::class]->registerNamespace(new Page());
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');

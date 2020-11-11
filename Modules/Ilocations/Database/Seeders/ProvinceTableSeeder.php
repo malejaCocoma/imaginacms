@@ -19,9 +19,7 @@ class ProvinceTableSeeder extends Seeder
     {
         Model::unguard();
   
-      DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-      DB::table('ilocations__provinces')->truncate();
-      DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+      
         $path = base_path('/Modules/Ilocations/Assets/js/provinces.json');
         $provinces = json_decode(file_get_contents($path), true);
         $countries = Country::all();

@@ -200,11 +200,11 @@ class SettingApiController extends BaseApiController
           $setting['type'] = $setting['view'];
           if (Str::contains($setting['view'], 'select'))
             $setting['type'] = 'select';
-  
+          
           if (Str::contains($setting['view'], 'select-multi'))
             $setting['type'] = 'select-multi';
-  
-  
+          
+          
           // type selectMultiple where view contains select-locale string
           if (Str::contains($setting['view'], 'select-locales'))
             $setting['type'] = 'select-multi';
@@ -214,7 +214,11 @@ class SettingApiController extends BaseApiController
             if($setting['value']=='1')
               $setting['value'] = true;
             else
-              $setting['value']= false;
+              if($setting['value'] == '0')
+                $setting['value']= false;
+              else
+                if(isset($setting["default"]))
+                  $setting['value'] = $setting["default"];
           }
           
           // type setting standard based in view param
@@ -234,13 +238,13 @@ class SettingApiController extends BaseApiController
           
           // type setting standard based in view param
           if (Str::contains($setting['view'], 'text-multi')){
-  
+            
             $setting['type'] = 'text-multi';
             if(!$setting['value']){
               $setting['value'] = [];
             }
           }
-  
+          
           // type setting standard based in view param
           if (Str::contains($setting['view'], 'text-multi-with-options')){
             $setting['type'] = 'text-multi-with-options';
@@ -255,16 +259,14 @@ class SettingApiController extends BaseApiController
               $setting['value'] = [];
             }
           }
-  
+          
           // type setting standard based in view param
           if (isset($setting["custom"]) && $setting["custom"]){
             $setting['type'] = $setting['view'];
-            if(isset($setting["default"]) && !$setting['value']){
-              $setting['value'] = $setting["default"];
-            }
           }
-  
-  
+          
+          
+          
         }else{
           unset($module[$keySetting]);
         }
@@ -283,5 +285,4 @@ class SettingApiController extends BaseApiController
       (is_object(json_decode($string)) ||
         is_array(json_decode($string))))) ? true : false;
   }
-  
 }

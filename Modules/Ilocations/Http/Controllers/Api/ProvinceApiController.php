@@ -54,6 +54,32 @@ class ProvinceApiController extends BaseApiController
         return response()->json($response ?? ["data" => "Request successful"], $status ?? 200);
     }
 
+  public function show($criteria, Request $request)
+  {
+    try {
+      //Get Parameters from URL.
+      $params = $this->getParamsRequest($request);
+
+      //Request to Repository
+      $dataEntity = $this->province->getItem($criteria, $params);
+
+      //Break if no found item
+      if (!$dataEntity) throw new Exception('Item not found', 404);
+
+      //Response
+      $response = ["data" => new ProvinceTransformer($dataEntity)];
+
+      //If request pagination add meta-page
+      $params->page ? $response["meta"] = ["page" => $this->pageTransformer($dataEntity)] : false;
+    } catch (\Exception $e) {
+      $status = $this->getStatusError($e->getCode());
+      $response = ["errors" => $e->getMessage()];
+    }
+
+    //Return response
+    return response()->json($response ?? ["data" => "Request successful"], $status ?? 200);
+  }
+
     public function create(Request $request)
     {
         DB::beginTransaction();

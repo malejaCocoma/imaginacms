@@ -76,7 +76,7 @@ class EloquentPostRepository extends EloquentBaseRepository implements PostRepos
     public function create($data)
     {
         $post = $this->model->create($data);
-        $post->categories()->sync(Arr::get($data, 'categories', []));
+        $post->categories()->sync(array_merge(Arr::get($data, 'categories', []), [$post->category_id]));
         event(new PostWasCreated($post, $data));
         $post->setTags(Arr::get($data, 'tags', []));
         return $post;
@@ -92,7 +92,7 @@ class EloquentPostRepository extends EloquentBaseRepository implements PostRepos
     {
         $post->update($data);
 
-        $post->categories()->sync(Arr::get($data, 'categories', []));
+        $post->categories()->sync(array_merge(Arr::get($data, 'categories', []), [$post->category_id]));
 
         event(new PostWasUpdated($post, $data));
         $post->setTags(Arr::get($data, 'tags', []));

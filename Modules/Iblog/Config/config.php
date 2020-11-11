@@ -166,5 +166,15 @@ return [
         'postPerFeed' => 20,
         'logo' => ''
     ],
-
+    //Media Fillables
+    'mediaFillable' => [
+      'post' => [
+        'mainimage' => 'single',
+        'secondaryimage' => 'single'
+      ],
+      'category' => [
+        'mainimage' => 'single',
+        'secondaryimage' => 'single'
+      ]
+    ]
 ];

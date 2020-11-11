@@ -86,12 +86,9 @@ class AuthApiController extends BaseApiController
             app(UserResetter::class)->startReset($credentials);
             $response = ["data" => ["data" => "Request successful"]];//Response
         } catch (UserNotFoundException $e) {
-            \Log::error($e);
             $status = $this->getStatusError(404);
             $response = ["errors" => trans('user::messages.no user found')];
         } catch (Exception $e) {
-            \Log::error($e);
-            \DB::rollback();//Rollback to Data Base
             $status = $this->getStatusError($e->getCode());
             $response = ["errors" => $e->getMessage()];
         }
@@ -130,8 +127,6 @@ class AuthApiController extends BaseApiController
             $status = $this->getStatusError(402);
             $response = ["errors" => trans('user::messages.invalid reset code')];
         } catch (Exception $e) {
-            \Log::error($e);
-            \DB::rollback();//Rollback to Data Base
             $status = $this->getStatusError($e->getCode());
             $response = ["errors" => $e->getMessage()];
         }
@@ -237,14 +232,10 @@ class AuthApiController extends BaseApiController
      */
     public function logout(Request $request)
     {
-        \DB::beginTransaction(); //DB Transaction
         try {
             $token = $this->validateResponseApi($this->getRequestToken($request));//Get Token
             DB::table('oauth_access_tokens')->where('id', $token->id)->delete();//Delete Token
-            \DB::commit();//Commit to DataBase
         } catch (Exception $e) {
-            \Log::error($e);
-            \DB::rollback();//Rollback to Data Base
             $status = $this->getStatusError($e->getCode());
             $response = ["errors" => $e->getMessage()];
         }
@@ -261,17 +252,13 @@ class AuthApiController extends BaseApiController
      */
     public function logoutAllSessions(Request $request)
     {
-        \DB::beginTransaction(); //DB Transaction
         try {
             $userId = $request->input('userId');//Get user ID form request
             if (isset($userId)) {
                 //Delete all tokens of this user
                 DB::table('oauth_access_tokens')->where('user_id', $userId)->delete();
-                \DB::commit();//Commit to DataBase
             }
         } catch (Exception $e) {
-            \Log::error($e);
-            \DB::rollback();//Rollback to Data Base
             $status = $this->getStatusError($e->getCode());
             $response = ["errors" => $e->getMessage()];
         }
@@ -316,8 +303,6 @@ class AuthApiController extends BaseApiController
                 ]];
             } else throw new Exception('Unauthorized', 403);
         } catch (Exception $e) {
-            \Log::error($e);
-            \DB::rollback();//Rollback to Data Base
             $status = $this->getStatusError($e->getCode());
             $response = ["errors" => $e->getMessage()];
         }
@@ -347,8 +332,6 @@ class AuthApiController extends BaseApiController
 
             $response = ['data' => ['expiresIn' => $expiresIn]];
         } catch (Exception $e) {
-            \Log::error($e);
-            \DB::rollback();//Rollback to Data Base
             $status = $this->getStatusError($e->getCode());
             $response = ["errors" => $e->getMessage()];
         }
@@ -386,7 +369,6 @@ class AuthApiController extends BaseApiController
             ]];
 
         } catch (Exception $e) {
-            \Log::error($e);
             $status = $this->getStatusError($e->getCode());
             $response = ["errors" => $e->getMessage()];
 
@@ -410,7 +392,6 @@ class AuthApiController extends BaseApiController
      */
     private function getRequestToken($request)
     {
-        \DB::beginTransaction(); //DB Transaction
         try {
             $value = $request->bearerToken();//Get from request
             if ($value) {
@@ -437,8 +418,6 @@ class AuthApiController extends BaseApiController
                 \DB::commit();//Commit to DataBase
             } else throw new Exception('Unauthorized', 401);//Throw unautorize
         } catch (Exception $e) {
-            \Log::error($e);
-            \DB::rollback();//Rollback to Data Base
             $status = $this->getStatusError($e->getCode());
             $response = ["errors" => $e->getMessage()];
         }

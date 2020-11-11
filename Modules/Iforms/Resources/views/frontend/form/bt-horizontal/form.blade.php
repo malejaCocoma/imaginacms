@@ -16,13 +16,15 @@
     @include('iforms::frontend.form.bt-horizontal.fields')
 
     <div class="col-sm-offset-2 col-sm-10">
-      {!!app('captcha')->display($attributes = ['data-sitekey'=>Setting::get('iforms::api')])!!}
+      @if(Setting::get('iforms::api'))
+        {!!app('captcha')->display($attributes = ['data-sitekey'=>Setting::get('iforms::api')])!!}
+      @endif
       </br>
     </div>
 
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-primary">{{trans('iforms::form.form.submit')}}</button>
+    <div class="form-group row">
+      <div class="col-sm-12 text-right">
+        <button type="submit" class="btn btn-primary">{{trans('iforms::forms.form.submit')}}</button>
       </div>
     </div>
   </form>

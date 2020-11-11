@@ -49,6 +49,7 @@ class CityApiController extends BaseApiController
             $response = ["data" => CityTransformer::collection($dataEntity)];
 
             //If request pagination add meta-page
+            $params->page ? $response["meta"] = ["page" => $this->pageTransformer($dataEntity)] : false;
 
         } catch (\Exception $e) {
             $status = $this->getStatusError($e->getCode());
@@ -80,8 +81,6 @@ class CityApiController extends BaseApiController
             //Response
             $response = ["data" => new CityTransformer($dataEntity)];
 
-            //If request pagination add meta-page
-            $params->page ? $response["meta"] = ["page" => $this->pageTransformer($dataEntity)] : false;
         } catch (\Exception $e) {
             $status = $this->getStatusError($e->getCode());
             $response = ["errors" => $e->getMessage()];

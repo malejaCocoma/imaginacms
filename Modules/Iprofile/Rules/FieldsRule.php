@@ -11,10 +11,12 @@ class FieldsRule implements Rule
      *
      * @return void
      */
-    public function __construct()
-    {
-        //
-    }
+  private $setting;
+  public function __construct()
+  {
+    
+    $this->setting = app('Modules\Setting\Contracts\Setting');
+  }
 
     /**
      * Determine if the validation rule passes.
@@ -27,9 +29,10 @@ class FieldsRule implements Rule
     {
       
       foreach ($value as $field){
-        if($field["name"] == "confirmPolytics" && !$field["value"]){
-          return false;
-        }
+        if($this->setting->get('iprofile::registerUserWithPoliticsOfPrivacy'))
+          if($field["name"] == "confirmPolytics" && !$field["value"]){
+            return false;
+          }
         
     }
       return true;

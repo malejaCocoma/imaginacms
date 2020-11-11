@@ -11,11 +11,13 @@ class PostInstallCommands implements SetupScript
      * @var array
      */
     protected $postCommands = [
-        'key:generate',
-        'migrate',
-        'passport:install',
-        'module:publish-config',
-        'module:publish'
+    'key:generate' => [],
+    'migrate' => [],
+    'passport:install' => [],
+    'module:publish-config' => [
+      '-f'
+    ],
+    'module:publish' => []
     ];
 
     /**
@@ -29,12 +31,14 @@ class PostInstallCommands implements SetupScript
             $command->blockMessage('Post Install Commands', 'Executing post install commands ...', 'comment');
         }
 
-        foreach ($this->postCommands as $postCommand) {
+        foreach ($this->postCommands as $postCommand => $options) {
+
             if ($command->option('verbose')) {
-                $command->call($postCommand);
+
+                $command->call($postCommand, $options);
                 continue;
             }
-            $command->callSilent($postCommand);
+            $command->callSilent($postCommand, $options);
         }
     }
 }

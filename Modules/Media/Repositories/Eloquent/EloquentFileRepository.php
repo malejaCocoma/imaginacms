@@ -350,6 +350,17 @@ class EloquentFileRepository extends EloquentBaseRepository implements FileRepos
       
       if (isset($filter->field))//Filter by specific field
         $field = $filter->field;
+
+
+      //is Folder
+      if (isset($filter->zone)) {
+        $filesIds = \DB::table("media__imageables as imageable")
+          ->where('imageable.zone',$filter->zone)
+          ->where('imageable.imageable_id',$filter->entityId)
+          ->where('imageable.imageable_type',$filter->entity)
+          ->get()->pluck("file_id")->toArray();
+        $query->whereIn("id",$filesIds);
+      }
     }
     
     /*== FIELDS ==*/
