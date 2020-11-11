@@ -1,5 +1,5 @@
 {
-  "name": "imagina/adminlte-theme",
+  "name": "idavoll/adminlte-theme",
   "type": "asgard-theme",
   "description": "An AsgardCMS administration theme",
   "keywords": [
@@ -19,14 +19,10 @@
   },
   "scripts": {
     "post-install-cmd": [
-      "php artisan stylist:publish",
-      "rm -rf ./public/iadmin",
-      "cp -Rf ./Themes/Adminlte/iadmin ./public/"
+      "php artisan stylist:publish"
     ],
     "post-update-cmd": [
-      "php artisan stylist:publish",
-      "rm -rf ./public/iadmin",
-      "cp -Rf ./Themes/Adminlte/iadmin ./public/"
+      "php artisan stylist:publish"
     ]
   },
   "extra": {
