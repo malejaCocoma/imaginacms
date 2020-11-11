@@ -34,30 +34,30 @@
         "venturecraft/revisionable": "^1.35",
         "laravel/passport": "^10.0",
 
-        "imagina/core-module": "8.0.x-dev",
-        "imagina/dashboard-module": "8.0.x-dev",
+        "imagina/core-module": "v8.x-dev",
+        "imagina/dashboard-module": "v8.x-dev",
 
-        "imagina/tag-module": "8.0.x-dev",
-        "imagina/media-module": "8.0.x-dev",
-        "imagina/page-module": "8.0.x-dev",
-        "imagina/menu-module": "8.0.x-dev",
-        "imagina/setting-module": "8.0.x-dev",
-        "imagina/translation-module": "8.0.x-dev",
-        "imagina/workshop-module": "8.0.x-dev",
-        "imagina/user-module": "8.0.x-dev",
+        "imagina/tag-module": "v8.x-dev",
+        "imagina/media-module": "v8.x-dev",
+        "imagina/page-module": "v8.x-dev",
+        "imagina/menu-module": "v8.x-dev",
+        "imagina/setting-module": "v8.x-dev",
+        "imagina/translation-module": "v8.x-dev",
+        "imagina/workshop-module": "v8.x-dev",
+        "imagina/user-module": "v8.x-dev",
 
-        "imagina/iblog-module": "8.0.x-dev",
-        "imagina/iforms-module": "8.0.x-dev",
-        "imagina/notification-module": "8.0.x-dev",
-        "imagina/slider-module": "8.0.x-dev",
-        "imagina/isearch-module": "8.0.x-dev",
-        "imagina/ibanners-module": "8.0.x-dev",
-        "imagina/iprofile-module": "8.0.x-dev",
-        "imagina/isite-module": "8.0.x-dev",
-        "imagina/ilocations-module": "8.0.x-dev",
-        "imagina/iredirect-module": "8.0.x-dev",
+        "imagina/iblog-module": "v8.x-dev",
+        "imagina/iforms-module": "v8.x-dev",
+        "imagina/notification-module": "v8.x-dev",
+        "imagina/slider-module": "v8.x-dev",
+        "imagina/isearch-module": "v8.x-dev",
+        "imagina/ibanners-module": "v8.x-dev",
+        "imagina/iprofile-module": "v8.x-dev",
+        "imagina/isite-module": "v8.x-dev",
+        "imagina/ilocations-module": "v8.x-dev",
+        "imagina/iredirect-module": "v8.x-dev",
 
-        "imagina/flatly-theme": "8.0.x-dev"
+        "imagina/flatly-theme": "v8.x-dev"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
@@ -86,7 +86,7 @@
     "extra": {
         "branch-alias": {
             "dev-master": "4.0.x-dev",
-            "dev-imaginacms8.x": "8.0.x-dev"
+            "dev-imaginacms8.x": "v8.x-dev"
         },
         "laravel": {
             "dont-discover": []
