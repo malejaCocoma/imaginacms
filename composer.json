@@ -30,9 +30,12 @@
         "nwidart/laravel-modules": "^6.0",
         "symfony/yaml": "^5.1",
         "tightenco/ziggy": "^0.9.4",
+        "yajra/laravel-datatables-oracle": "~9.0",
         "typicms/nestablecollection": "^1.1",
         "venturecraft/revisionable": "^1.35",
         "laravel/passport": "^10.0",
+        "kalnoy/nestedset": "^5.0",
+        "livewire/livewire": "^2.3",
 
         "imagina/core-module": "v8.x-dev",
         "imagina/dashboard-module": "v8.x-dev",

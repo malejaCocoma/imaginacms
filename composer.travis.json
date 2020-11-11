@@ -32,7 +32,9 @@
         "tightenco/ziggy": "^0.9.4",
         "typicms/nestablecollection": "^1.1",
         "venturecraft/revisionable": "^1.35",
-        "laravel/passport": "^10.0"
+        "laravel/passport": "^10.0",
+        "kalnoy/nestedset": "^5.0",
+        "livewire/livewire": "^2.3"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
@@ -60,7 +62,8 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-imaginacms8.x": "8.0.x-dev"
+            "dev-master": "4.0.x-dev",
+            "dev-imaginacms8.x": "v8.x-dev"
         },
         "laravel": {
             "dont-discover": []
