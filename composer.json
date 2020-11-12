@@ -60,7 +60,8 @@
         "imagina/ilocations-module": "v8.x-dev",
         "imagina/iredirect-module": "v8.x-dev",
 
-        "imagina/flatly-theme": "v8.x-dev"
+        "imagina/flatly-theme": "v8.x-dev",
+        "imagina/adminlte-theme": "v8.x-dev"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
