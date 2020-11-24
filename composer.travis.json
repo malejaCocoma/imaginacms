@@ -32,12 +32,16 @@
         "ramsey/uuid": "^4.0",
         "symfony/yaml": "^5.1",
         "tightenco/ziggy": "^0.9.4",
+        "yajra/laravel-datatables-oracle": "~9.0",
         "typicms/nestablecollection": "^1.1",
         "venturecraft/revisionable": "^1.35",
-        "yajra/laravel-datatables-oracle": "~9.0",
         "laravel/passport": "^10.0",
         "kalnoy/nestedset": "^5.0",
-        "livewire/livewire": "^2.3"
+        "livewire/livewire": "^2.3",
+        "pusher/pusher-php-server": "^4.1",
+        "cviebrock/eloquent-sluggable": "^8.0",
+        "jantinnerezo/livewire-alert":"^2.0",
+        "anhskohbo/no-captcha":"^3.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
