@@ -2,6 +2,7 @@
 
 namespace Modules\Iblog\Console;
 
+use Illuminate\Support\Str;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Modules\Iblog\Repositories\CategoryRepository;
@@ -190,7 +191,7 @@ class MigrateIblog extends Command
 
             }
         } catch (\Exception $e) {
-            \Log::error($e);
+            \Log::error($e->getMessage());
             $this->info($e->getMessage());
         }
     }

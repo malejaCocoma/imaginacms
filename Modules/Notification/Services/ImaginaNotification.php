@@ -298,7 +298,7 @@ final class ImaginaNotification implements Inotification
         ])
         ->send();
     } catch (\Exception $e) {
-      \Log::error($e);
+      \Log::error($e->getMessage());
     }
   }
   

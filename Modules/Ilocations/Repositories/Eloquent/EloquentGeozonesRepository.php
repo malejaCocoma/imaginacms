@@ -2,6 +2,7 @@
 
 namespace Modules\Ilocations\Repositories\Eloquent;
 
+use Illuminate\Support\Arr;
 use Modules\Ilocations\Repositories\GeozonesRepository;
 use Modules\Core\Repositories\Eloquent\EloquentBaseRepository;
 

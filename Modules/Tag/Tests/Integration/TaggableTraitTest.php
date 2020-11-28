@@ -134,7 +134,7 @@ class TaggableTraitTest extends BaseTestCase
     }
 
     /** @test */
-    public function it_generates_slug_like_original_str_slug()
+    public function it_generates_slug_like_original_Str::slug()
     {
         $page = $this->createPage();
 

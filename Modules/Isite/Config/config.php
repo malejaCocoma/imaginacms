@@ -28,4 +28,11 @@ return [
     "Dashboard",
     "Workshop"
   ],
+  
+  
+  'livewireAlerts' => [
+    'position' => 'bottom-end',
+    'iconColor' => '#008640'
+  ]
+  
 ];

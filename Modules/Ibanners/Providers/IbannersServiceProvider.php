@@ -1,5 +1,6 @@
 <?php namespace Modules\Ibanners\Providers;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Modules\Ibanners\Entities\Position;

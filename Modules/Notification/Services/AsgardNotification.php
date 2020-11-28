@@ -79,7 +79,7 @@ final class AsgardNotification implements Notification
                 ])
                 ->send();
         } catch (\Exception $e) {
-            \Log::error($e);
+            \Log::error($e->getMessage());
         }
 
 

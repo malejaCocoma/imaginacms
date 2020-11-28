@@ -33,6 +33,6 @@ try{
     })->where('url', '.*');
 }
 catch (Exception $e){
-    \Log::error($e);
+    \Log::error($e->getMessage());
 }
 
