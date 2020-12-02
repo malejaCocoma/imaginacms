@@ -43,10 +43,10 @@ class EloquentPositionRepository extends EloquentBaseRepository implements Posit
 
 
     /**
-     * @param string $systemName
-     * @return Ibanners
+     * @param  string  $systemName
+     * @return object
      */
-    public function findBySystemName($systemName)
+    public function findBySystemName(string $systemName)
     {
         return $this->model->with('banners')->where('system_name', '=', $systemName)->first();
     }

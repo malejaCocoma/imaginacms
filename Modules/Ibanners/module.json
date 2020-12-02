@@ -5,7 +5,7 @@
     "keywords": [],
     "version": "4.0.1",
     "active": 1,
-    "order": 1,
+    "priority": 1,
     "providers": [
         "Modules\\Ibanners\\Providers\\IbannersServiceProvider",
         "Modules\\Ibanners\\Providers\\RouteServiceProvider"

@@ -9,7 +9,7 @@ class SlideOrdererTest extends BaseSliderTest
      */
     protected $slideOrderer;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->slideOrderer = app('Modules\Ibanners\Services\SlideOrderer');

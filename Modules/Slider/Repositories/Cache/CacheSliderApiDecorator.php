@@ -32,4 +32,46 @@ class CacheSliderApiDecorator extends BaseCacheDecorator implements SliderApiRep
                 }
             );
     }
+
+    public function getItemsBy($params)
+    {
+        return $this->remember(function () use ($params) {
+            return $this->repository->getItemsBy($params);
+        });
+    }
+
+    public function updateBy($criteria, $data, $params)
+    {
+        $this->clearCache();
+
+        return $this->repository->updateBy($criteria, $data, $params);
+    }
+
+    public function index($page, $take, $filter, $include)
+    {
+        return $this->remember(function () use ($page, $take, $filter, $include) {
+            return $this->repository->index($page, $take, $filter, $include);
+        });
+    }
+
+    public function getItem($criteria, $params)
+    {
+        return $this->remember(function () use ($criteria, $params) {
+            return $this->repository->getItem($criteria, $params);
+        });
+    }
+
+    public function show($id, $include)
+    {
+        return $this->remember(function () use ($id, $include) {
+            return $this->repository->show($id, $include);
+        });
+    }
+
+    public function deleteBy($criteria, $params)
+    {
+        $this->clearCache();
+
+        return $this->repository->deleteBy($criteria, $params);
+    }
 }

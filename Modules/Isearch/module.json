@@ -5,7 +5,7 @@
     "keywords": [],
     "active": 1,
     "version": "3.0.1",
-    "order": 1,
+    "priority": 1,
     "providers": [
         "Modules\\Isearch\\Providers\\IsearchServiceProvider",
         "Modules\\Isearch\\Providers\\RouteServiceProvider"

@@ -6,7 +6,7 @@ use Modules\Ibanners\Entities\Slide;
 
 class SlideRepositoryTest extends BaseSliderTest
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
     }
