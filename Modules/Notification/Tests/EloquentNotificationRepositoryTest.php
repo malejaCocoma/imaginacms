@@ -12,7 +12,7 @@ class EloquentNotificationRepositoryTest extends BaseTestCase
      */
     private $notification;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->notification = app(NotificationRepository::class);

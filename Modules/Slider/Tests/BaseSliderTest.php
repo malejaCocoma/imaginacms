@@ -13,8 +13,8 @@ use Modules\Slider\Entities\Slider;
 use Modules\Slider\Providers\SliderServiceProvider;
 use Modules\Slider\Repositories\SlideRepository;
 use Modules\Slider\Repositories\SliderRepository;
+use Nwidart\Modules\LaravelModulesServiceProvider;
 use Orchestra\Testbench\TestCase;
-use Pingpong\Modules\ModulesServiceProvider;
 
 abstract class BaseSliderTest extends TestCase
 {
@@ -36,7 +36,7 @@ abstract class BaseSliderTest extends TestCase
     /**
      *
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

@@ -12,7 +12,7 @@ class SliderPresenterTest extends BaseSliderTest
      */
     private $sliderPresenter;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->sliderPresenter = app('Modules\Ibanners\Presenters\SliderPresenter');
