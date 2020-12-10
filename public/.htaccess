@@ -5,6 +5,10 @@
 
     RewriteEngine On
 
+    # Force WWW
+    RewriteCond %{HTTP_HOST} ^metkaalu.co [NC]
+    RewriteRule ^(.*)$ https://www.metkaalu.co/$1 [L,R=301]
+
     # Force SSL
     RewriteCond %{HTTPS} !=on
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
