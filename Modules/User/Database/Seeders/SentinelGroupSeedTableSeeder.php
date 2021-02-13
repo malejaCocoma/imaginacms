@@ -19,6 +19,17 @@ class SentinelGroupSeedTableSeeder extends Seeder
 
         $groups = Sentinel::getRoleRepository();
   
+      $superAdmin = Sentinel::findRoleBySlug('super-admin');
+      if(!isset($superAdmin->id)){
+        // Create an SuperUser group
+        $groups->createModel()->create(
+          [
+            'name' => 'Super Admin',
+            'slug' => 'super-admin',
+          ]
+        );
+      }
+      
       $adminGroup = Sentinel::findRoleBySlug('admin');
       if(!isset($adminGroup->id)){
         // Create an Admin group
