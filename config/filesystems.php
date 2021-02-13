@@ -78,6 +78,24 @@ return [
         ],
 
 
+        'privatemedia' => [
+            'driver' => 'local',
+            'root'   => storage_path('app/private'),
+            'permissions' => [
+                'file' => [
+                    'public' => 0777,
+                    'private' => 0700,
+                ],
+                'dir' => [
+                    'public' => 0777,
+                    'private' => 0700,
+                ]
+            ],
+            'url' => env('APP_URL'). '/storage',
+            'visibility' => 'public',
+        ],
+
+
 
         'public' => [
             'driver' => 'local',
