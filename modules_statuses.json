@@ -19,5 +19,8 @@
     "Isearch": true,
     "Isite": true,
     "Notification": true,
-    "Slider": true
+    "Slider": true,
+    "Icustom": true,
+    "Ifillable": true,
+    "Ischedulable": true
 }

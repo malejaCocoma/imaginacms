@@ -1,6 +1,8 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/js/manifest.js": "/js/manifest.js",
-    "/js/vendor.js": "/js/vendor.js"
+    "/themes/imaginatheme/js/app.js": "/themes/imaginatheme/js/app.js",
+    "/themes/imaginatheme/css/app.css": "/themes/imaginatheme/css/app.css",
+    "/themes/imaginatheme/css/secondary.css": "/themes/imaginatheme/css/secondary.css",
+    "/assets/js/secondary.js": "/assets/js/secondary.js",
+    "/resources/js/main.js": "/resources/js/main.js",
+    "/resources/scss/_modules-combined.scss": "/resources/scss/_modules-combined.scss"
 }

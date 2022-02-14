@@ -14,3 +14,29 @@ yarn.lock
 .phpunit.result.cache
 .php_cs.cache
 .idea
+sftp-config.json
+
+
+#Ignore /public but not...
+/public/*
+!/public/modules
+!/public/fonts
+!/public/js
+!/public/svg
+!/public/css
+!/public/themes
+/public/themes/*
+!/public/themes/imaginatheme
+!/public/index.php
+!/public/.htaccess
+!/public/robots.txt
+!/public/mix-manifest.json
+ 
+#Themes but not ImaginaTheme
+/Themes/*
+!/Themes/ImaginaTheme
+#Modules but not Modules Icustom
+/Modules/*
+!Modules/Icustom
+
+
