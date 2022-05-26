@@ -1,0 +1,120 @@
+<div class="section-slider-allies mt-3 container">
+    <x-isite::carousel.owl-carousel
+            id="sliderDonacion"
+            repository="Modules\Slider\Repositories\SlideApiRepository"
+            :params="['take' => 20,'filter' => ['sliderId' => '4']]"
+            :margin="25"
+            itemLayout="item-list-layout-1"
+            :nav="false"
+            title="{{trans('icustom::common.title-slider-donation')}}"
+            :autoplay="false"
+            mediaImage="slideimage"
+            :responsive="[0 => ['items' =>  2], 425 => ['items' =>  3], 720 => ['items' => 6]]"
+            :dots="true"
+            dotsStyle="dots-linear"
+
+
+            :withSummary="false"
+            :itemComponentAttributes="[
+                'withViewMoreButton'=>false,
+                'withCategory'=>false,
+                'withSummary'=>false,
+                'withCreatedDate'=>false,
+                'layout'=>'item-list-layout-6',
+                'imageAspect'=>'3/2',
+                'imageObject'=>'contain',
+                'imageBorderRadio'=>0,
+                'imageBorderStyle'=>'solid',
+                'imageBorderWidth'=>0,
+                'imageBorderColor'=>'#000000',
+                'imagePadding'=>0,
+                'imagePicturePadding'=>0,
+                'withTitle'=>false,
+                'titleAlign'=>'',
+                'titleTextSize'=>20,
+                'titleTextWeight'=>'font-weight-bold',
+                'titleTextTransform'=>'',
+                'formatCreatedDate'=>'d \d\e M',
+                'summaryAlign'=>'text-left',
+                'summaryTextSize'=>16,
+                'summaryTextWeight'=>'font-weight-normal',
+                'numberCharactersSummary'=>100,
+                'categoryAlign'=>'text-left',
+                'categoryTextSize'=>18,
+                'categoryTextWeight'=>'font-weight-normal',
+                'createdDateAlign'=>'text-left',
+                'createdDateTextSize'=>14,
+                'createdDateTextWeight'=>'font-weight-normal',
+                'buttonAlign'=>'text-left',
+                'buttonLayout'=>'rounded',
+                'buttonIcon'=>'',
+                'buttonIconLR'=>'left',
+                'buttonColor'=>'light',
+                'viewMoreButtonLabel'=>'isite::common.menu.viewMore',
+                'withImageOpacity'=>false,
+                'imageOpacityColor'=>'opacity-dark',
+                'imageOpacityDirection'=>'opacity-top',
+                'orderClasses'=>[
+                'photo'=>'order-0',
+                'title'=>'order-1',
+                'date'=>'order-4',
+                'categoryTitle'=>'order-3',
+                'summary'=>'order-2',
+                'viewMoreButton'=>'order-5'
+                ],
+                'imagePosition'=>1,
+                'imagePositionVertical'=>'align-self-center',
+                'contentPositionVertical'=>'align-self-center',
+                'contentPadding'=>0,
+                'contentBorder'=>0,
+                'contentBorderColor'=>'#dddddd',
+                'contentBorderRounded'=>0,
+                'contentMarginInsideX'=>'mx-0',
+                'contentBorderShadows'=>'none',
+                'contentBorderShadowsHover'=>'',
+                'titleColor'=>'text-dark',
+                'summaryColor'=>'text-dark',
+                'categoryColor'=>'text-primary',
+                'createdDateColor'=>'text-primary',
+                'titleMarginT'=>'mt-3',
+                'titleMarginB'=>'mb-2',
+                'summaryMarginT'=>'mt-0',
+                'summaryMarginB'=>'mb-2',
+                'categoryMarginT'=>'mt-0',
+                'categoryMarginB'=>'mb-2',
+
+                'createdDateMarginT'=>'mt-0',
+                'createdDateMarginB'=>'mb-2',
+
+                'buttonMarginT'=>'mt-0',
+                'buttonMarginB'=>'mb-0',
+
+                'titleLetterSpacing'=>0,
+                'summaryLetterSpacing'=>0,
+                'categoryLetterSpacing'=>0,
+                'createdDateLetterSpacing'=>0,
+                'titleVineta'=>'',
+                'titleVinetaColor'=>'text-dark',
+                'buttonSize'=>'button-normal',
+                'buttonTextSize'=>16,
+                'itemBackgroundColor'=>'#ffffff',
+                'itemBackgroundColorHover'=>'#ffffff',
+                'titleHeight'=> 'auto',
+                'summaryHeight'=> 'auto',
+                'columnLeft'=>'col-lg-6',
+                'columnRight'=>'col-lg-6',
+                'titleTextDecoration'=>'none',
+                'summaryTextDecoration'=>'none',
+                'categoryTextDecoration'=>'none',
+                'createdDateTextDecoration'=>'none',
+                'titleAlignVertical'=>'align-items-start',
+                'numberCharactersTitle'=>200,
+                'itemMarginB'=>'',
+                'contentPaddingLeft'=>15,
+                'contentPaddingRight'=>15,
+                'contentBorderRoundedType'=>'1',
+                'imageBorderRadioType'=>'1',
+                'summaryLineHeight'=>20,
+                ]"
+    />
+</div>

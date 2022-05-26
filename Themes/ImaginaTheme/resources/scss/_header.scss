@@ -1,0 +1,63 @@
+header {
+  #logo-header{
+  object-fit: contain;
+  }
+
+  .navbar-nav .nav-link {
+    color: #0a0a0a;
+    font-weight: 100;
+    font-family: Quicksand;
+    font-weight: 500;
+    &:hover{
+      color: var(--primary);
+    }
+  }
+
+  #search-header {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    background-color: var(--secondary);
+    border-radius: 50px;
+
+    .fa-search {
+      color: #fff;
+    }
+  }
+
+  .btn-donation {
+    justify-items: center;
+    padding: 10px 15px;
+    color: #fff!important;
+    background-color: var(--primary);
+    font-family: Quicksand;
+    font-weight: 500;
+    &:hover{
+      font-weight: bold;
+    }
+  }
+
+  #menu-header .nav-item .nav-link i{
+    color: var(--secondary);
+  }
+
+  .modal{
+    .modal-header{
+      .relative-position{
+        width: 70%;
+      }
+      .close{
+        background-color: var(--primary);
+        opacity: 1;
+        margin: -1rem 0rem -1rem auto;
+      }
+    }
+  #menu-headernav{
+    justify-content: start;
+  }
+  }
+}
+
+.modal-backdrop {
+  z-index: 1018 !important;
+}
+

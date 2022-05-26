@@ -1,0 +1,347 @@
+
+.section-slider-header {
+
+  justify-content: left !important;
+
+  .slider-component .carousel-caption {
+    padding-top: 7%;
+  }
+
+  .row.h-100.justify-content-center {
+    justify-content: start !important;
+
+    .col-10.text-center {
+      flex: 0 0 53.333333%;
+      max-width: 53.333333%;
+
+      .custom-html, p {
+        font-family: Quicksand;
+        font-weight: 400;
+        font-size: 1.625rem;
+        text-shadow: none;
+        text-align: left;
+        @include media-breakpoint-down(md) {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+
+  .title1 {
+    font-family: Quicksand;
+    font-size: 1.625rem;
+    text-shadow: none !important;
+    text-align: left;
+    color: #fff;
+  }
+
+  .d-block {
+    text-align: left;;
+
+
+    .btn {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      border-radius: 20px;
+      font-size: 1.125rem;
+      max-height: 44px;
+      padding: 5px 15px;
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .item::before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: linear-gradient(70deg, rgba(44, 44, 44, 0.9) 30%, rgba(58, 58, 58, 0.9) 40%, rgba(225, 225, 225, 0) 80%);
+  }
+}
+
+.section-slider-home #sliderhome {
+  font-family: Quicksand;
+
+  .title.h1 {
+    font-size: 2.188rem;
+    color: black;
+    margin-bottom: 30px;
+    display: inline-block;
+    position: relative;
+
+    &:before {
+      content: " ";
+      position: absolute;
+      width: 80%;
+      height: 3px;
+      bottom: -8px;
+      background-color: var(--primary);
+    }
+  }
+
+  .custom-html p {
+    font-size: 1rem;
+    color: black;
+    text-align: justify;
+  }
+
+  .bg-image img {
+    border-radius: 20px;
+  }
+
+  .d-block .btn {
+    border: 3px solid var(--primary);
+    background-color: #fff;
+    border-radius: 25px;
+    font-size: 1.25rem;
+    color: var(--primary);
+    font-weight: 600;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
+
+#sliderCarousel {
+  .container-fluid .py-3 {
+    padding: 0 !important;
+
+    .card-item {
+      .title {
+        font-family: Quicksand;
+        color: #fff;
+        @include media-breakpoint-down(lg) {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+.section-donation {
+  position: relative;
+
+  .icon-donation {
+    position: absolute;
+    height: 90px;
+    width: 90px;
+    top: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0.3;
+    @include media-breakpoint-up(lg) {
+      height: 110px;
+      width: 110px;
+    }
+    @include media-breakpoint-down(sm) {
+      height: 70px;
+      width: 70px;
+    }
+  }
+
+  .item {
+
+    .image-link {
+      opacity: 0.1;
+    }
+
+    .carousel-caption {
+      font-family: Quicksand;
+      display: block !important;
+
+      @include media-breakpoint-up(lg) {
+        padding-top: 10%;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .title1 {
+        color: #1a1a1a;
+        text-shadow: none !important;
+        font-size: 1.875rem;
+        @include media-breakpoint-down(sm) {
+          font-size: 1.5rem;
+        }
+      }
+
+      .custom-html {
+        display: block !important;
+        color: #1a1a1a;
+        text-shadow: none !important;
+        font-size: 1.5rem;
+        font-weight: lighter;
+        @include media-breakpoint-down(sm) {
+          font-size: 1.25rem;
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-radius: 20px;
+
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.section-slider-allies {
+  #sliderDonacion {
+    .title-section {
+      text-align: center !important;
+      font-family: Quicksand;
+
+      .title {
+        color: #000;
+        font-size: 2.188rem;
+        font-weight: 500 !important;
+      }
+    }
+  }
+}
+
+//paginas internas
+
+.page-content {
+  font-family: Quicksand;
+
+  .title-page {
+    font-size: 2.188rem;
+    position: relative;
+    display: inline-block;
+
+    &:before {
+      content: " ";
+      position: absolute;
+      width: 80%;
+      height: 3px;
+      bottom: -8px;
+      background-color: var(--primary);
+    }
+  }
+
+  img {
+    border-radius: 20px;
+  }
+}
+
+#category {
+  font-family: Quicksand;
+  #content_index_blog {
+    .border-breadcrumb{
+      border-top: 1px solid #c9c9c9;
+      border-bottom: 1px solid #c9c9c9;
+    }
+    #breadcrumbSection {
+      font-family: Quicksand;
+      .breadcrumb {
+        margin-bottom: 0!important;
+        .breadcrumb-item a {
+          color: var(--primary);
+        }
+      }
+    }
+
+    .filters {
+      h5{
+        color: var(--primary);
+      }
+      span{
+        color: black;
+      }
+    }
+  }
+  .pagination {
+    align-items: center;
+
+
+    .page-item {
+      &:first-child, &:last-child {
+        span, button {
+          color: #7E8D99;
+          font-weight: bold;
+          font-size: 2.5rem;
+          display: flex;
+          position: relative;
+          width: 40px;
+          height: 72.5px;
+        }
+      }
+    }
+
+    .page-link {
+      background-color: #fff;
+      color: #000000;
+    }
+
+    .page-item.active .page-link {
+      background-color: var(--primary);
+      color: #fff;
+      border-radius: 50px;
+    }
+  }
+}
+
+.contact-page{
+  font-family: Quicksand;
+}
+
+.show-post{
+  font-family: Quicksand;
+  .main-img-post img{
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .section-slider-header .slider-component .carousel-caption .row.h-100.justify-content-center .col-10.text-center {
+    flex: 0 0 80.333333%;
+    max-width: 80.333333%;
+  }
+  .section-slider-header .slider-component .carousel-caption {
+    p {
+      font-size: 1.125rem;
+    }
+
+    .btn {
+      font-size: 1rem;
+    }
+  }
+  .section-donation {
+    .icon-donation {
+      top: 15px;
+    }
+
+    #helpus {
+      width: 100%;
+      min-height: 335px;
+      max-height: 302px !important;
+
+      .carousel-caption {
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 10px;
+        bottom: 0;
+      }
+
+      .col-10 {
+        padding: 0;
+        flex: 0 0 99.333333%;
+        max-width: 99.333333%;
+      }
+    }
+  }
+
+}
+
